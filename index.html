@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101121">
+  <title>Turbo Circuit — Neon Rally</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="Turbo Circuit racing game"></canvas>
+    <section id="menu" class="screen">
+      <div class="menu-backdrop"></div>
+      <header class="topbar"><div class="brand-mark"><span>TC</span></div><div class="brand-copy"><small>ARCADE RACING CLUB</small><b>TURBO CIRCUIT</b></div><div class="top-meta"><span class="live-dot"></span> SEASON 04 <i>•</i> SOLO CUP</div></header>
+      <div class="menu-layout">
+        <section class="hero-copy">
+          <div class="eyebrow"><span>✦</span> THE RACE IS YOURS</div>
+          <h1>CHASE<br><em>THE</em> <span>GLOW.</span></h1>
+          <p>Pick your ride. Find your line.<br>Make every corner count.</p>
+          <div class="feature-row"><div><b>3</b><small>FANTASTIC<br>COURSES</small></div><div><b>4</b><small>RIVAL<br>DRIVERS</small></div><div><b>∞</b><small>REASONS<br>TO RACE</small></div></div>
+        </section>
+        <section class="garage-card">
+          <div class="card-head"><div><small>01 / GARAGE</small><h2>Choose your ride</h2></div><div class="switcher"><button id="prevKart" aria-label="Previous kart">‹</button><span id="kartCount">01 / 04</span><button id="nextKart" aria-label="Next kart">›</button></div></div>
+          <div class="kart-stage"><div class="stage-ring"></div><div id="kartPreview" class="kart-preview"><div class="kart-shadow"></div><div class="kart-body"><div class="kart-wing"></div><div class="kart-seat"></div><div class="kart-nose"></div><div class="kart-wheel w1"></div><div class="kart-wheel w2"></div><div class="kart-wheel w3"></div><div class="kart-wheel w4"></div></div></div><div class="kart-stats"><span id="kartName">VOLT RACER</span><div class="stat"><small>SPEED</small><i><b id="speedStat"></b></i></div><div class="stat"><small>GRIP</small><i><b id="gripStat"></b></i></div><div class="stat"><small>BOOST</small><i><b id="boostStat"></b></i></div></div></div>
+          <div class="card-head track-head"><div><small>02 / DESTINATION</small><h2>Pick a course</h2></div><span class="track-hint">← → TO BROWSE</span></div>
+          <div id="trackGrid" class="track-grid"></div>
+          <button id="raceButton" class="race-button"><span>START YOUR RACE</span><b>→</b></button>
+          <div class="keyboard-tip"><span>WASD / ARROWS</span> DRIVE <span>SPACE</span> DRIFT <span>SHIFT</span> BOOST</div>
+        </section>
+      </div>
+      <footer class="menu-footer"><span>© 2026 TURBO CIRCUIT RACING CLUB</span><span>BUILT FOR THE JOY OF THE DRIVE <b>✦</b></span></footer>
+    </section>
+    <section id="hud" class="hud hidden">
+      <div class="hud-top"><div class="hud-brand"><b>TC</b><span>NEON<br>RALLY</span></div><div class="race-info"><strong id="trackTitle">SKYLINE SPRINT</strong><small>GRAND PRIX <i>•</i> 3 LAPS</small></div><div class="position"><b id="position">1<sup>ST</sup></b><small>POSITION</small></div><div class="lap"><b id="lap">1<span>/3</span></b><small>LAP</small></div></div>
+      <div class="speedometer"><div class="speed-orbit"><div class="speed-value"><b id="speedValue">000</b><small>KM/H</small></div></div><div class="boost-meter"><span>BOOST</span><i><b id="boostFill"></b></i><small id="boostHint">READY</small></div></div>
+      <div class="race-toast" id="toast">3</div>
+      <div class="race-controls"><kbd>←</kbd><kbd>→</kbd><span>STEER</span><kbd>SHIFT</kbd><span>BOOST</span><kbd>SPACE</kbd><span>DRIFT</span></div>
+    </section>
+    <section id="result" class="screen hidden">
+      <div class="result-glow"></div><div class="result-card"><div class="eyebrow">✦ RACE COMPLETE</div><h2 id="resultTitle">PODIUM<br><span>FINISH!</span></h2><p id="resultCopy">A brilliant drive. The crowd is on its feet.</p><div class="result-stats"><div><small>FINAL PLACE</small><b id="finalPlace">1ST</b></div><div><small>COURSE</small><b id="finalTrack">SKYLINE SPRINT</b></div><div><small>TIME</small><b id="finalTime">00:00</b></div></div><button id="againButton" class="race-button"><span>RACE AGAIN</span><b>↻</b></button><button id="menuButton" class="text-button">BACK TO GARAGE</button></div>
+    </section>
+    <div id="touchControls" class="touch-controls hidden"><button id="touchLeft">◀</button><button id="touchDrift">DRIFT</button><button id="touchBoost">BOOST</button><button id="touchRight">▶</button></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
